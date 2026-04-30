@@ -43,7 +43,11 @@ class Group::Bund < Group
   self.layer = true
   self.event_types = [Event, Event::Course, Event::Camp]
 
+  # EEDS: Districts (Group::Region) et Groupes Locaux (Group::Abteilung)
+  # autorisés en enfants directs du Bund pour les structures autonomes.
   children Group::Kantonalverband,
+    Group::Region,
+    Group::Abteilung,
     Group::Ausbildungskommission,
     Group::BundesGremium,
     Group::BundesKommission
@@ -287,54 +291,21 @@ class Group::Bund < Group
     self.permissions = [:group_read, :contact_data]
   end
 
-  roles MitarbeiterGs,
-    ItSupport,
-    Sekretariat,
-    Adressverwaltung,
-    PowerUser,
-    AssistenzAusbildung,
-    Praesidium,
+  # EEDS: liste réduite à 15 rôles (~50 → 15) pour la structure EEDS.
+  # Les classes non listées restent définies pour compatibilité données existantes.
+  roles Praesidium,
     VizePraesidium,
-    PraesidiumApv,
     Geschaeftsleitung,
-    Mitarbeiter,
-    VertretungPbs,
-    Beisitz,
+    Sekretariat,
     Kassier,
-    Rechnungen,
-    Revisor,
-    Redaktor,
-    Webmaster,
-    Mediensprecher,
-    Uebersetzer,
-    MitgliedKrisenteam,
-    Coach,
-    GrossanlassCoach,
-    Leitungskursbetreuung,
     LeitungKernaufgabeAusbildung,
     LeitungKernaufgabeKommunikation,
     LeitungKernaufgabeProgramm,
-    LeitungKernaufgabeSupport,
-    VerantwortungBiberstufe,
     VerantwortungWolfstufe,
     VerantwortungPfadistufe,
     VerantwortungPiostufe,
     VerantwortungRoverstufe,
-    VerantwortungPfadiTrotzAllem,
-    VerantwortungIntegration,
-    VerantwortungLagermeldung,
-    VerantwortungPr,
-    VerantwortungPraeventionSexuellerAusbeutung,
-    VerantwortungIT,
-    VerantwortungKrisenteam,
-    VerantwortungEhrenamt,
-    InternationalCommissionerIcWagggs,
     InternationalCommissionerIcWosm,
-    StvIcProgrammeWagggs,
-    StvIcProgrammeWosm,
     Spezialfunktion,
-    Ehrenmitglied,
-    Passivmitglied,
-    Kontaktperson,
     Selbstregistriert
 end

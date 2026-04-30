@@ -54,17 +54,15 @@ class Group::Abteilung < Group
   self.layer = true
   self.event_types = [Event, Event::Course, Event::Camp]
 
-  self.used_attributes += [:pta, :vkp, :group_health, :pbs_material_insurance, :gender,
+  self.used_attributes += [:group_health, :gender,
     :try_out_day_at, :geolocations]
-  self.superior_attributes += [:pta, :vkp, :pbs_material_insurance]
 
-  children Group::Biber,
-    Group::Woelfe,
+  # EEDS: Group::Biber retiré (fusion Biber + Wölfe -> Mbotaay)
+  # EEDS: Group::Pta (SMT) et Group::Elternrat (Conseil de parents) retirés — spécifiques à la Suisse
+  children Group::Woelfe,
     Group::Pfadi,
     Group::Pio,
     Group::AbteilungsRover,
-    Group::Pta,
-    Group::Elternrat,
     Group::AbteilungsGremium,
     Group::InternesAbteilungsGremium,
     Group::ErziehungsberechtigtenGremium,
@@ -271,37 +269,15 @@ class Group::Abteilung < Group
     self.permissions = [:group_read, :contact_data]
   end
 
+  # EEDS: liste réduite à 9 rôles pour le Groupe Local.
+  # Les classes non listées restent définies pour compatibilité données existantes.
   roles Abteilungsleitung,
     AbteilungsleitungStv,
     Sekretariat,
-    Adressverwaltung,
-    PowerUser,
-    Praesidium,
-    VizePraesidium,
-    PraesidiumApv,
-    PraesidiumElternrat,
-    Praeses,
-    Beisitz,
-    Materialwart,
-    Heimverwaltung,
-    StufenleitungBiber,
+    Kassier,
     StufenleitungWoelfe,
     StufenleitungPfadi,
     StufenleitungPio,
     StufenleitungRover,
-    StufenleitungPta,
-    Kassier,
-    Rechnungen,
-    Revisor,
-    Redaktor,
-    Webmaster,
-    Coach,
-    VerantwortungMaterialverkaufsstelle,
-    VerantwortungPfadiTrotzAllem,
-    VerantwortungPr,
-    VerantwortungIT,
-    Spezialfunktion,
-    Ehrenmitglied,
-    Passivmitglied,
     Selbstregistriert
 end

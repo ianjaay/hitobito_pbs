@@ -17,5 +17,5 @@ class Group::Root < ::Group
 
   roles Admin
 
-  children Group::Bund, Group::Silverscouts
+  children Group::Bund
 end

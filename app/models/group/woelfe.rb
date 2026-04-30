@@ -68,10 +68,10 @@ class Group::Woelfe < Group
     self.visible_from_above = false
   end
 
+  # EEDS: Chef d'Unité, Adjoint, Responsable + membre
   roles Einheitsleitung,
     Mitleitung,
     Adressverwaltung,
-    Leitwolf,
     Wolf
 
   self.standard_role = Wolf

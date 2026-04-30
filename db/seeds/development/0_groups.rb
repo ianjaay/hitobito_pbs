@@ -94,9 +94,7 @@ abteilungen = Group::Abteilung.seed(:name, :parent_id,
   {name: "Nünenen",
    parent_id: regions[3].id}.merge(seeder.group_attributes))
 
-Group::Biber.seed(:name, :parent_id,
-  {name: "Biber",
-   parent_id: abteilungen[2].id})
+Group::Biber.seed(:name, :parent_id) # EEDS: branche Biber désactivée — seed neutralisé
 
 woelfe = Group::Woelfe.seed(:name, :parent_id,
   {name: "Sunnewirbu",

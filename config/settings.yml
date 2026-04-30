@@ -6,37 +6,29 @@
 # Settings relevant for the pbs wagon
 # Overrides settings from the main application
 application:
-  name: MiData PBS/MSdS/MSS
+  name: GalleApp - EEDS
   logo:
-    image: logo.svg
-    width: 220
+    image: logo_eeds.png
+    width: 80
     height: 80
   page_background: # override default page background color depending on environment
     hit-pbs-int.ocp.puzzle.ch: '#61bfbc'
     pbs.puzzle.ch: '#61bfbc'
     dev: '#d2d5dd'
   languages:
-    de: Deutsch
     fr: Français
-    it: Italiano
   footer:
     links:
-      de:
-        "Informationen und Hilfe": http://info-de.scouts.ch
-        "Datenschutz": http://danu-de.scouts.ch
       fr:
-        "Aide et assistance": http://info-fr.scouts.ch
-        "Datenschutz": http://danu-fr.scouts.ch
-      it:
-        "Aiuto e assistenza": http://info-it.scouts.ch
-        "Datenschutz": http://danu-it.scouts.ch
-  course_confirmation_url: "https://corsiexp.scouts.ch/benevole/renderer/pdf/%{course_kind_confirmation_name}/%{locale}"
+        "Site EEDS": https://eeds.sn
+        "Aide et assistance": https://eeds.sn/contact
+  course_confirmation_url: "https://eeds.sn/benevole/renderer/pdf/%{course_kind_confirmation_name}/%{locale}"
 
 
 # The person with this email has root access to everything
 # This person should only be used by the operators of the application, not the customers.
 # Initially, a password reset token may be mailed from the application to this address to set a password.
-root_email: hitobito-pbs@puzzle.ch
+root_email: admin@eeds.sn
 
 <% mail_domain = ENV['RAILS_MAIL_DOMAIN'].presence ||
                  ENV['RAILS_HOST_NAME'].presence ||
@@ -44,11 +36,11 @@ root_email: hitobito-pbs@puzzle.ch
 
 email:
   # Sender for all emails sent by the application
-  sender: <%= "MiData PBS/MSdS/MSS <noreply@#{mail_domain}>" %>
+  sender: <%= "GalleApp EEDS <noreply@#{mail_domain}>" %>
 
   camp:
-    submit_recipient: lager@pbs.ch
-    submit_abroad_recipient: auslandlager@pbs.ch
+    submit_recipient: camps@eeds.sn
+    submit_abroad_recipient: camps-international@eeds.sn
 
 event:
   globally_visible_by_default: false

@@ -27,3 +27,4 @@ rubocop-results.xml
 
 db/schema.rb
 db/schema.rb.diff
+config/locales/models.pbs.fr.yml.original.bak
