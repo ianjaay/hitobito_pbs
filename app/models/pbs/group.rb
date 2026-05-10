@@ -52,6 +52,14 @@ module Pbs::Group
     validates :hostname, uniqueness: true, allow_blank: true
     has_many :crises
 
+    # EEDS: defaut langue 'fr' si non spécifié
+    before_validation :default_language_to_fr
+
+    # EEDS: autoriser la suppression d'un groupe avec des sous-groupes ou rôles
+    # en cascadant la soft-delete vers les descendants et leurs rôles.
+    self.protect_if_methods = (protect_if_methods || {}).slice(:root?)
+    before_destroy :cascade_soft_delete_descendants
+
     root_types Group::Root
 
     def self.bund
@@ -61,6 +69,19 @@ module Pbs::Group
     def self.silverscouts
       Group::Silverscouts.first
     end
+  end
+
+  # EEDS: instance method used by before_validation above
+  def default_language_to_fr
+    available = Person::LANGUAGES.keys.map(&:to_s)
+    self.language = "fr" unless available.include?(language.to_s)
+  end
+
+  # EEDS: cascade soft delete to all descendant groups and their roles
+  def cascade_soft_delete_descendants
+    descendant_ids = self_and_descendants.where.not(id: id).pluck(:id)
+    Role.where(group_id: descendant_ids + [id]).find_each(&:destroy)
+    Group.where(id: descendant_ids).update_all(deleted_at: Time.zone.now)
   end
 
   def active_crisis_acknowledgeable?(person)

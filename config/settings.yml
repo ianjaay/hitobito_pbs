@@ -6,7 +6,7 @@
 # Settings relevant for the pbs wagon
 # Overrides settings from the main application
 application:
-  name: GalleApp - EEDS
+  name: E-Gàlle - Plateforme de Gestion des Membres des EEDS
   logo:
     image: logo_eeds.png
     width: 80
@@ -36,7 +36,7 @@ root_email: admin@eeds.sn
 
 email:
   # Sender for all emails sent by the application
-  sender: <%= "GalleApp EEDS <noreply@#{mail_domain}>" %>
+  sender: <%= "E-Gàlle EEDS <noreply@#{mail_domain}>" %>
 
   camp:
     submit_recipient: camps@eeds.sn

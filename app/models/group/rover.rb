@@ -56,7 +56,6 @@ class Group::Rover < Group
 
   class Rover < ::Role
     self.permissions = []
-    self.visible_from_above = false
   end
 
   # EEDS: Chef d'Unité, Adjoint, Responsable + membre

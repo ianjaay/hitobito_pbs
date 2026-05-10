@@ -60,7 +60,6 @@ class Group::Pio < Group
 
   class Pio < ::Role
     self.permissions = []
-    self.visible_from_above = false
   end
 
   # EEDS: Chef d'Unité, Adjoint, Responsable + membre
