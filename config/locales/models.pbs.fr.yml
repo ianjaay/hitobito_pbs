@@ -145,9 +145,8 @@ fr:
         other: collaborateur·trice·s
         other: Collaborateur·trice·s
       group/bund/vertretung_pbs:
-        one: Représentant·e du MSdS
-        other: Représentant·e·s du MSdS
-        other: Représentant·e·s du MSdS
+        one: Représentant·e des EEDS
+        other: Représentant·e·s des EEDS
       group/bund/beisitz:
         one: assesseur·euse
         other: assesseurs·euses
@@ -1086,29 +1085,29 @@ fr:
             other: Bonjour %{greeting_name}
         available:
           hallo_neutral_pfadiname:
-            label: Hallo [Pfadiname]
+            label: Salut [totem]
             value:
-              m: Hallo %{nickname}
-              w: Hallo %{nickname}
-              other: Hallo %{nickname}
+              m: Salut %{nickname}
+              w: Salut %{nickname}
+              other: Salut %{nickname}
           hallo_neutral_vorname:
-            label: Hallo [Vorname]
+            label: Salut [prénom]
             value:
-              m: Hallo %{first_name}
-              w: Hallo %{first_name}
-              other: Hallo %{first_name}
+              m: Salut %{first_name}
+              w: Salut %{first_name}
+              other: Salut %{first_name}
           guten_tag_neutral_pfadiname:
-            label: Guten Tag [Pfadiname]
+            label: Bonjour [totem]
             value:
-              m: Guten Tag %{nickname}
-              w: Guten Tag %{nickname}
-              other: Guten Tag %{nickname}
+              m: Bonjour %{nickname}
+              w: Bonjour %{nickname}
+              other: Bonjour %{nickname}
           guten_tag_neutral_vorname:
-            label: Guten Tag [Vorname]
+            label: Bonjour [prénom]
             value:
-              m: Guten Tag %{first_name}
-              w: Guten Tag %{first_name}
-              other: Guten Tag %{first_name}
+              m: Bonjour %{first_name}
+              w: Bonjour %{first_name}
+              other: Bonjour %{first_name}
           lieber_pfadiname:
             label: Cher·Chère [totem]
             value:
@@ -1122,13 +1121,13 @@ fr:
               w: Chère  %{first_name}
               other: Cher/Chère %{first_name}
           lieber_titel_nachname:
-            label: Chère Madame · Cher Monsieur [Titel] [Nachname]
+            label: Cher·Chère [titre] [nom]
             value:
               m: Cher Monsieur %{title_last_name}
               w: Chère Madame %{title_last_name}
               other: Cher·Chère %{title_last_name}
           sehr_geehrter_titel_nachname:
-            label: Chère Madame · Cher Monsieur [Titel] [Nachname]
+            label: Chère Madame · Cher Monsieur [titre] [nom]
             value:
               m: Cher Monsieur %{title_last_name}
               w: Chère Madame %{title_last_name}

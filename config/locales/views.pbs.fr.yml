@@ -86,18 +86,18 @@ fr:
         not_persisted: Pas encore sauvegardé
     lists:
       nav_left_camps:
-        all_camps: Camp dans toute la Suisse
-        kantonalverband_camps: Camp %{group}
-        camps_in_canton: Camp à %{canton}
-        camps_abroad: Camp à l'étranger
+        all_camps: Tous les camps EEDS
+        kantonalverband_camps: Camps %{group}
+        camps_in_canton: Camps à %{canton}
+        camps_abroad: Camps à l'étranger
       all_camps:
-        title: Camps à venir dans toute la Suisse
-        explanation: "Ici s'affichent tous les camps du MSdS qui ont lieu actuellement ou qui auront lieu dans trois semaines ou moins. Seuls les camps annoncés et qui n'ont pas été annulés sont pris en compte."
+        title: Camps à venir dans tous les EEDS
+        explanation: "Ici s'affichent tous les camps des EEDS qui ont lieu actuellement ou qui auront lieu dans trois semaines ou moins. Seuls les camps annoncés et qui n'ont pas été annulés sont pris en compte."
       kantonalverband_camps:
-        title: Tous les camps au sein de l'association cantonale %{group}
-        explanation: "Ici s'affichent tous les camps qui sont organisés au sein d'une même association cantonale. Seuls les camps annoncés et qui n'ont pas été annulés sont pris en compte."
+        title: Tous les camps de la région %{group}
+        explanation: "Ici s'affichent tous les camps qui sont organisés au sein d'une même région. Seuls les camps annoncés et qui n'ont pas été annulés sont pris en compte."
       camps_in_canton:
-        title: Tous les camps dans le canton %{canton}
+        title: Tous les camps dans le district %{canton}
         explanation: "Ici s'affichent tous les camps qui ont lieu actuellement ou qui auront lieu dans trois semaines ou moins au sein d'un même canton. Seuls les camps annoncés et dont le statut est confirmé ou plus et qui n'ont pas été annulés sont pris en compte."
       camps_abroad:
         title: Tous les camps à l'étranger
@@ -249,7 +249,7 @@ fr:
       zz_title: Consulte la brochure "Camps à l'étranger" dans la "Sardine" pour compléments
       zz_url: http://international.msds.ch
       lu_title: Observe la réglementation spéciale pour les camps dans le canton de Lucerne ("Sardine" -> Cas particuliers de l'annonce de camp)
-      lu_url: http://heringfr.scouts.ch
+      lu_url: "#"
       ti_title: Observe la réglementation particulière pour les camps au Tessin ("Sardine" -> Cas particuliers de l'annonce de camp)
       ti_url: http://sardine.scouts.ch
       sg_title: Observe la réglementation spéciale pour les camps dans le canton de St-Gall ("Sardine" -> Cas particuliers de l'annonce de camp)
@@ -309,7 +309,7 @@ fr:
   help:
     index:
       title: Aide
-      description_html: Les informations sur les derniers updates se trouvent dans les <a href="http://releasenotes.scouts.ch" target="_blank">release notes</a>.
+      description_html: Les informations sur les derniers updates se trouvent dans les <a href="#" target="_blank">notes de version EEDS</a>.
       power_users:
         title: PowerUser
         description: "Ici, tu trouveras une vue d'ensemble des PowerUsers dans tes groupes qui peuvent t'aider en cas de requête :"
@@ -318,21 +318,21 @@ fr:
         title: Fils conducteurs
         description: "Ces fils conducteurs te soutiennent pour l'administration de cours et de camps:"
         hering:
-          url: http://heringfr.scouts.ch
-          title: "Sardine: Guide des démarches administratives pour les camps scouts"
-          description: "La sardine te donne toutes les informations pour l'administration de camps scouts. Elle te mène pas à pas à travers tous les documents importants. Avec ce guide, tu n'oublieras aucun point important."
+          url: "#"
+          title: "Guide des démarches administratives pour les camps EEDS"
+          description: "Documentation à venir : guide pas-à-pas pour l'administration des camps EEDS."
         anker:
-          url: http://ankerfr.scouts.ch
-          title: "L’ancre: Fil conducteur pour l’administration des cours MSdS"
-          description: "Pour les chef·fe·s de cours et les conseiller·ère·s à la formation: tous les processus administratifs qui doivent être pris en compte lors de l'inscription et de la réalisation d'un cours J+S ou OFAS y sont décrits de manière détaillée."
+          url: "#"
+          title: "Fil conducteur pour l'administration des cours EEDS"
+          description: "Documentation à venir : pour les chef·fe·s de cours et les conseiller·ère·s à la formation."
         pilot:
-          url: http://pilotfr.scouts.ch
-          title: "Pilote: Fil conducteur pour l'administration des cours du MSdS dans MiData et la BDNS"
-          description: "Fil conducteur pour les secrétariats et les responsables de la formation cantonaux sur l'administration des cours dans la MiData et la BDNS"
+          url: "#"
+          title: "Fil conducteur pour l'administration des cours EEDS sur E-Gàlle"
+          description: "Documentation à venir : fil conducteur pour les secrétariats et les responsables de la formation."
         ticket:
-          url: http://ticketfr.scouts.ch
-          title: "Ticket: Fil conducteur pour l’annonce de participants aux cours"
-          description: "Le Ticket décrit le processus d'inscription des participants par la MiData (banque nationale de données des membres du MSdS)"
+          url: "#"
+          title: "Fil conducteur pour l'annonce de participants aux cours"
+          description: "Documentation à venir : processus d'inscription des participants aux cours EEDS."
 
   member_counts:
     created_data_for_year: Les données de %{total} membres au total ont été créées avec succès pour l'année %{year}.
