@@ -1270,10 +1270,10 @@ fr:
       person:
         layer_group_id: Id du niveau principal
         nickname: Totem
-        pbs_number: N° personnel MSdS
+        pbs_number: Matricule EEDS
         salutation: Formule de politesse
         salutation_value: Formule de politesse
-        pronouns: Pronomen
+        pronouns: Pronoms
         title: Civilité
         gender: Sexe officiel
         grade_of_school: Classe scolaire
@@ -1281,7 +1281,7 @@ fr:
         leaving_date: Date de départ
         j_s_number: N° personnel J+S
         has_siblings_in_layer: Frères et sœurs au niveau
-        kv: Assocation cantonale
+        kv: Région EEDS
         prefers_digital_correspondence: Préfère la correspondance numérique
 
       group:
@@ -1317,7 +1317,7 @@ fr:
       black_list:
         first_name: Prénom
         last_name: Nom de famille
-        pbs_number: ID-MSdS
+        pbs_number: Matricule EEDS
         email: Adresse e-mail
         phone_number: Numéro de téléphone
         reference_name: Nom de référence
