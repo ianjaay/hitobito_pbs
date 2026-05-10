@@ -465,9 +465,8 @@ fr:
         other: Responsables prévention
         other: Responsables prévention
       group/kantonalverband/verantwortung_it:
-        one: Verantwortliche*r IT
-        other: Verantwortliche IT
-        other: Verantwortliche IT
+        one: Responsable informatique
+        other: Responsables informatique
       group/kantonalverband/verantwortung_programm:
         one: Responsable Programme Régional
         other: Responsables Programme Régional
@@ -649,17 +648,15 @@ fr:
         other: Responsables prévention
         other: Responsables prévention
       group/region/verantwortung_it:
-        one: Verantwortliche*r IT
-        other: Verantwortliche IT
-        other: Verantwortliche IT
+        one: Responsable informatique
+        other: Responsables informatique
       group/region/verantwortung_programm:
         one: Responsable Programme District
         other: Responsables Programme District
         other: Responsables Programme District
       group/region/verantwortung_nachhaltigkeit:
-        one: Verantwortliche*r Nachhaltigkeit und Umwelt
-        other: Verantwortliche Nachhaltigkeit und Umwelt
-        other: Verantwortliche Nachhaltigkeit und Umwelt
+        one: Responsable du développement durable et de l'environnement
+        other: Responsables du développement durable et de l'environnement
       group/region/spezialfunktion:
         one: Fonction spéciale
         other: Fonction spéciale
@@ -809,17 +806,11 @@ fr:
         other: Responsables Scout Malgré Tout
         other: Responsables Scout Malgré Tout
       group/abteilung/verantwortung_pr:
-        one: Verantwortliche*r PR
-        other: Verantwortliche PR
-        description:
-      group/abteilung/verantwortung_pr:
         one: Responsable relations publiques
         other: Responsables relations publiques
-        other: Responsables relations publiques
       group/abteilung/verantwortung_it:
-        one: Verantwortliche*r IT
-        other: Verantwortliche IT
-        other: Verantwortliche IT
+        one: Responsable informatique
+        other: Responsables informatique
       group/abteilung/spezialfunktion:
         one: Fonction spéciale
         other: Fonction spéciale
