@@ -29,60 +29,23 @@ module Event::Campy
   end
 
   included do # rubocop:todo Metrics/BlockLength
-    self.used_attributes += [:leader_id, :abteilungsleitung_id, :coach_id,
-      :advisor_mountain_security_id, :advisor_snow_security_id,
-      :advisor_water_security_id,
-      :canton, :coordinates, :altitude, :emergency_phone,
+    # EEDS: liste réduite — retirés les attributs spécifiques Suisse / J+S :
+    #   abteilungsleitung_id, coach_id, advisor_*_security_id,
+    #   canton, j_s_kind, j_s_security_*, paper_application_required,
+    #   al_present, al_visiting*, coach_visiting*, coach_confirmed,
+    #   local_scout_contact*, EXPECTED_PARTICIPANT_ATTRS, LEADER_CHECKPOINT_ATTRS.
+    self.used_attributes += [:leader_id,
+      :coordinates, :altitude, :emergency_phone,
       :landlord, :landlord_permission_obtained,
-      :j_s_kind,
-      :j_s_security_snow, :j_s_security_mountain, :j_s_security_water,
-      :paper_application_required,
-      :al_present, :al_visiting, :al_visiting_date,
-      :coach_visiting, :coach_visiting_date, :coach_confirmed,
-      :local_scout_contact_present, :local_scout_contact,
       :camp_submitted]
 
-    self.used_attributes += EXPECTED_PARTICIPANT_ATTRS
-    self.used_attributes += LEADER_CHECKPOINT_ATTRS
-
-    self.role_types += [Event::Camp::Role::LeaderMountainSecurity,
-      Event::Camp::Role::LeaderSnowSecurity,
-      Event::Camp::Role::LeaderWaterSecurity]
-
+    # EEDS: seul le rôle Leader reste pertinent (pas de Snow/Mountain/Water Security).
     restricted_role :leader, Event::Camp::Role::Leader
-    restricted_role :abteilungsleitung, Event::Camp::Role::Abteilungsleitung
-    restricted_role :coach, Event::Camp::Role::Coach
-    restricted_role :advisor_mountain_security, Event::Camp::Role::AdvisorMountainSecurity
-    restricted_role :advisor_snow_security, Event::Camp::Role::AdvisorSnowSecurity
-    restricted_role :advisor_water_security, Event::Camp::Role::AdvisorWaterSecurity
 
     ### VALIDATIONS
 
-    validates(*EXPECTED_PARTICIPANT_ATTRS,
-      numericality: {greater_than_or_equal_to: 0, only_integer: true, allow_blank: true})
-    validates :j_s_kind, inclusion: {in: J_S_KINDS, allow_blank: true}
-    validates :canton, inclusion: {in: CANTONS, allow_blank: true}
-
-    with_options if: :camp_submitted?, presence: true do
-      validates :canton, :location, :altitude, :emergency_phone,
-        :landlord, :coach_id, :coach_confirmed,
-        :leader_id, :lagerreglement_applied, :kantonalverband_rules_applied,
-        :j_s_rules_applied, :coordinates,
-        # check if any of the expected attrs has an assigned value
-        :any_expected_participant_attr
-    end
-
-    with_options presence: true do
-      # only check these attrs if security required for given topic
-      validates :advisor_snow_security_id, if: -> { camp_submitted? && j_s_security_snow }
-      validates :advisor_mountain_security_id, if: -> { camp_submitted? && j_s_security_mountain }
-      validates :advisor_water_security_id, if: -> { camp_submitted? && j_s_security_water }
-    end
-
-    ### CALLBACKS
-
-    after_save :reset_checkpoint_attrs_if_leader_changed
-    after_save :reset_coach_confirmed_if_changed
+    # EEDS: validations Suisse/J+S retirées (canton, j_s_kind, advisors security,
+    # presence required at camp_submitted? pour canton/coach/règlements/etc.).
   end
 
   def abroad?

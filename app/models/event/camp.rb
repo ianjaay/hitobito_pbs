@@ -146,10 +146,9 @@ class Event::Camp < Event
   ### CALLBACKS
   before_validation :assert_allow_sub_camps, unless: :allow_sub_camps
 
-  before_create :assign_abteilungsleitung
-  after_save :send_assignment_infos
-  after_save :send_abteilungsleitung_assignment_info
-  after_save :send_created_infos
+  # EEDS: callbacks Suisse retirés (assign_abteilungsleitung,
+  # send_assignment_infos pour advisors security, send_abteilungsleitung_assignment_info,
+  # send_created_infos pour layer_leaders).
 
   ### INSTANCE METHODS
 
